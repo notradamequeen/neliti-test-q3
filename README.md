@@ -6,6 +6,7 @@ This project is for neliti test purpose only. A weather app powered by Django an
 - cd neliti-weather-ui
 - run npm install
 - run npm start
+- hit http://localhost:4200 in your browser
 
 ## How to start the Backend
 - cd nelititest
@@ -18,7 +19,7 @@ This project is for neliti test purpose only. A weather app powered by Django an
 
 ### API search country
 
-- URL: https://localhost:8000/api/countries
+- URL: http://localhost:8000/api/countries
 - METHOD: GET
 - URL PARAMS: {country_name: string}
 - RESPONSE CODE: 200 OK
