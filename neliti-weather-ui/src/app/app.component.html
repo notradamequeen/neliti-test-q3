@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="panel panel-default">
+      <img class="weather-logo" src="https://img.pngio.com/weather-targeting-weather-png-350_350.jpg" alt="My image">
+      <span class="title">Check the weather</span>
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="row">
+              <span>Select country</span>
+              <div class="input-group mb-3">
+                <input type="text"
+                      [formControl]="countryName"
+                      class="form-control"
+                      aria-label="Text input with dropdown button"
+                      (keyup)="searchCountry($event)">
+              </div>
+              <ul class="list-group list-group-flush" *ngIf="isCountryOptionShow">
+                <!-- results of ngFor is passed to appFilter with argument searchText -->
+                <li class="list-group-item" *ngFor="let c of countries | async">
+                  <div class="country-option" (click)="selectCountry(c)">{{c.name}}</div>
+                </li>
+              </ul>
+            </div>
+            <div class="row" *ngIf="selectedCountry !== undefined">
+              <div class="weather-button" (click)="checkWeather()">
+                <i class="fas fa-cloud-meatball"></i> check weather
+              </div>
+            </div>
+            
+          </form>
+          
+        </div>
+        <div class="col-md-6">
+          <div class="row d-flex">
+            <div *ngFor="let weather of weathers; let i = index">
+              <div class="weather-item d-flex flex-row justify-content-between">
+                <div>
+                  {{ weather.date_time | date:'MMM d, y - h:mm:ss a'}}
+                </div>
+                <div [innerHtml]="getWeatherIcon(weather.symbol)">
+                </div>
+                <div>
+                  <p>Temperature: {{ weather.air_temperature }} </p>
+                  <p>Wind speed: {{ weather.wind_speed }} </p>
+                  <p>Relative humidity: {{ weather.relative_humidity }}</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <form>
+        <div class="row">
+          <div class="col-md-5">
+            <div class="form-group">
+              <label for="country">Select your country</label>
+              <div class='input-group-prepend'>
+                <div><i id="search-icon" class="fas fa-search"></i></div>
+                <input id="user-country" placeholder="Search" class="form-control">
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-md-1">
+            <button class="check-btn">check</button>
+          </div>
+        </div>
+      </form> -->
+  </div>
+</div>

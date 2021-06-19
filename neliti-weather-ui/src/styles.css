@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+.weather-logo {
+  width: 200px;
+  height: auto;
+}
+
+.country-option {
+  cursor: pointer;
+  background-color: aliceblue;
+}
+
+.weather-button {
+  font-size: 36px;
+  background-color: lightblue;
+  cursor: pointer;
+  margin: 20px;
+  border-radius: 20px;
+  width: 300px !important;
+}
+
+.weather-item {
+  padding: 10px;
+  border: 1px solid bisque;
+}
+
+.weather-symbol {
+  font-size: 28px;
+}
